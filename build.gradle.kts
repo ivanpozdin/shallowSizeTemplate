@@ -8,6 +8,15 @@ plugins {
     id("io.gitlab.arturbosch.detekt").version("1.22.0-RC2")
 }
 
+dependencies {
+    detektPlugins("io.gitlab.arturbosch.detekt:detekt-formatting:1.19.0")
+}
+
+detekt {
+    source = files("shallowSizePlugin/src", "shallowSizePluginTest/src")
+    autoCorrect = true
+}
+
 group = "spbu.kotlin.class.shallowSize"
 version = "1.0-SNAPSHOT"
 

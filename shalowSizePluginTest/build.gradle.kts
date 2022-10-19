@@ -8,23 +8,21 @@ dependencies {
     implementation("org.junit.jupiter:junit-jupiter:5.8.2")
     testImplementation("org.junit.jupiter:junit-jupiter-api:5.8.2")
     testRuntimeOnly("org.junit.jupiter:junit-jupiter-engine")
-
 }
 
 tasks.compileKotlin {
     kotlinOptions {
         jvmTarget = jvmTargetVersion
-        freeCompilerArgs = freeCompilerArgs + "-Xplugin=${rootDir}/shallowSizePlugin/build/libs/shallow-size-plugin.jar"
+        freeCompilerArgs = freeCompilerArgs + "-Xplugin=$rootDir/shallowSizePlugin/build/libs/shallow-size-plugin.jar"
     }
 }
 
 tasks.compileTestKotlin {
     kotlinOptions {
         jvmTarget = jvmTargetVersion
-        freeCompilerArgs = freeCompilerArgs + "-Xplugin=${rootDir}/shallowSizePlugin/build/libs/shallow-size-plugin.jar"
+        freeCompilerArgs = freeCompilerArgs + "-Xplugin=$rootDir/shallowSizePlugin/build/libs/shallow-size-plugin.jar"
     }
 }
-
 
 tasks.test {
     useJUnitPlatform()
